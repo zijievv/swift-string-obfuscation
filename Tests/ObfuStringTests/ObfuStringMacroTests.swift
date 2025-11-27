@@ -30,9 +30,7 @@ final class ObfuStringMacroAlgoTests: XCTestCase {
                     @inline(__always)
                     func deriveKeyFn(_ u: [UInt8], _ i: UInt8) -> UInt8 {
                         var h: UInt8 = i
-                        let r = Int.random(in: 0 ... 16)
-                        let s = r > 15 ? r : 16
-                        for b in u[0 ..< s] {
+                        for b in u {
                             h = (h &+ (b &* 31)) ^ 0x5D
                         }
                         return h
@@ -80,9 +78,7 @@ final class ObfuStringMacroAlgoTests: XCTestCase {
                     @inline(__always)
                     func deriveKeyFn(_ u: [UInt8], _ i: UInt8) -> UInt8 {
                         var h: UInt8 = i
-                        let r = Int.random(in: 0 ... 16)
-                        let s = r > 15 ? r : 16
-                        for b in u[0 ..< s] {
+                        for b in u {
                             h = (h &+ (b &* 31)) ^ 0x5D
                         }
                         return h
@@ -127,9 +123,7 @@ final class ObfuStringMacroAlgoTests: XCTestCase {
                     @inline(__always)
                     func deriveKeyFn(_ u: [UInt8], _ i: UInt8) -> UInt8 {
                         var h: UInt8 = i
-                        let r = Int.random(in: 0 ... 16)
-                        let s = r > 15 ? r : 16
-                        for b in u[0 ..< s] {
+                        for b in u {
                             h = (h &+ (b &* 31)) ^ 0x5D
                         }
                         return h
@@ -175,9 +169,7 @@ final class ObfuStringMacroAlgoTests: XCTestCase {
                     @inline(__always)
                     func deriveKeyFn(_ u: [UInt8], _ i: UInt8) -> UInt8 {
                         var h: UInt8 = i
-                        let r = Int.random(in: 0 ... 16)
-                        let s = r > 15 ? r : 16
-                        for b in u[0 ..< s] {
+                        for b in u {
                             h = (h &+ (b &* 31)) ^ 0x5D
                         }
                         return h
@@ -230,9 +222,7 @@ final class ObfuStringMacroAlgoTests: XCTestCase {
                     @inline(__always)
                     func deriveKeyFn(_ u: [UInt8], _ i: UInt8) -> UInt8 {
                         var h: UInt8 = i
-                        let r = Int.random(in: 0 ... 16)
-                        let s = r > 15 ? r : 16
-                        for b in u[0 ..< s] {
+                        for b in u {
                             h = (h &+ (b &* 31)) ^ 0x5D
                         }
                         return h
@@ -259,9 +249,7 @@ final class ObfuStringMacroAlgoTests: XCTestCase {
                     @inline(__always)
                     func deriveKeyFn(_ u: [UInt8], _ i: UInt8) -> UInt8 {
                         var h: UInt8 = i
-                        let r = Int.random(in: 0 ... 16)
-                        let s = r > 15 ? r : 16
-                        for b in u[0 ..< s] {
+                        for b in u {
                             h = (h &+ (b &* 31)) ^ 0x5D
                         }
                         return h
@@ -310,9 +298,7 @@ final class ObfuStringMacroAlgoTests: XCTestCase {
                     @inline(__always)
                     func deriveKeyFn(_ u: [UInt8], _ i: UInt8) -> UInt8 {
                         var h: UInt8 = i
-                        let r = Int.random(in: 0 ... 16)
-                        let s = r > 15 ? r : 16
-                        for b in u[0 ..< s] {
+                        for b in u {
                             h = (h &+ (b &* 31)) ^ 0x5D
                         }
                         return h
@@ -358,9 +344,7 @@ final class ObfuStringMacroAlgoTests: XCTestCase {
                     @inline(__always)
                     func deriveKeyFn(_ u: [UInt8], _ i: UInt8) -> UInt8 {
                         var h: UInt8 = i
-                        let r = Int.random(in: 0 ... 16)
-                        let s = r > 15 ? r : 16
-                        for b in u[0 ..< s] {
+                        for b in u {
                             h = (h &+ (b &* 31)) ^ 0x5D
                         }
                         return h

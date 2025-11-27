@@ -14,10 +14,19 @@ public struct ObfuStringMacro: ExpressionMacro {
             throw DiagnosticsError(node: Syntax(node), "expected a string literal argument")
         }
         let entropy = try parseObfuscationEntropyInjection(from: node)
-        let strExprs: [ExprSyntax] = strLiteralExpr.segments.reduce(into: [ExprSyntax]()) { acc, segment in
+        let strExprs: [ExprSyntax] = try strLiteralExpr.segments.reduce(into: [ExprSyntax]()) { acc, segment in
             switch segment {
-            case .stringSegment(let seg):
-                let rawText = seg.content.text
+            case .stringSegment:
+                let rawTextStrLiteralExpr = StringLiteralExprSyntax(
+                    openingPounds: strLiteralExpr.openingPounds,
+                    openingQuote: strLiteralExpr.openingQuote,
+                    segments: .init([segment]),
+                    closingQuote: strLiteralExpr.closingQuote,
+                    closingPounds: strLiteralExpr.closingPounds
+                )
+                guard let rawText = rawTextStrLiteralExpr.representedLiteralValue else {
+                    throw DiagnosticsError(node: Syntax(segment), "invalid or unsupported string literal segment")
+                }
                 guard !rawText.isEmpty else {
                     return
                 }
